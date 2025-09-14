@@ -38,10 +38,10 @@ void display_circle(int x, int y) {
 }
 
 void RaylibDisplayBackend::display_board(const GameState &game_state) {
-    const int h_space = (screen_width - margin * 2) / game_state.grid_size;
-    const int v_space = (screen_height - top_margin - margin) / game_state.grid_size;
+    const float h_space = (screen_width - margin * 2) / game_state.grid_size;
+    const float v_space = (screen_height - top_margin - margin) / game_state.grid_size;
 
-    for (int i=0; i<=game_state.grid_size; i++) {
+    for (unsigned i=0; i<=game_state.grid_size; i++) {
         // Horizontal lines
         DrawLine(margin, top_margin + i*v_space, screen_width - margin, top_margin + i*v_space, BLACK);
 
@@ -50,8 +50,8 @@ void RaylibDisplayBackend::display_board(const GameState &game_state) {
     }
 
 
-    for (int i=0; i<game_state.grid_size; i++) {
-        for (int j=0; j<game_state.grid_size; j++) {
+    for (unsigned i=0; i<game_state.grid_size; i++) {
+        for (unsigned j=0; j<game_state.grid_size; j++) {
             if (game_state.values[i][j] == 1) {
                 display_cross(margin+i*h_space+h_space/2, top_margin+j*v_space+v_space/2);
             }
@@ -63,8 +63,8 @@ void RaylibDisplayBackend::display_board(const GameState &game_state) {
 }
 
 Vector2D RaylibDisplayBackend::get_mouse_pos(const int &grid_size) const {
-    const int h_space = (screen_width - margin * 2) / grid_size;
-    const int v_space = (screen_height - top_margin - margin) / grid_size;
+    const float h_space = (screen_width - margin * 2) / grid_size;
+    const float v_space = (screen_height - top_margin - margin) / grid_size;
 
     const Vector2 pos = GetMousePosition();
     const int x_grid = (pos.x - margin) / h_space;

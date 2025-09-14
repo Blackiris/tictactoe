@@ -15,6 +15,7 @@ add_executable(TicTacToe main.cpp
 
 
     game_state.h game_state.cpp
+    utils/minimax.h utils/minimax.cpp
 )
 target_link_libraries(${PROJECT_NAME} raylib)
 

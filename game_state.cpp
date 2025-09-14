@@ -1,9 +1,9 @@
 #include "game_state.h"
 #include <algorithm>
 
-GameState::GameState() {
-    for (auto& column: values) {
-        column.fill(0);
+GameState::GameState(const unsigned &grid_size) noexcept : grid_size(grid_size) {
+    for (unsigned i=0; i<grid_size; i++) {
+        values.emplace_back(std::vector<int>(grid_size, 0));
     }
 }
 
@@ -65,4 +65,18 @@ int GameState::get_winner() const {
     }
 
     return winner;
+}
+
+std::vector<Vector2D> GameState::get_available_moves() const {
+    std::vector<Vector2D> available_moves;
+    available_moves.reserve(9);
+
+    for (unsigned i=0; i<grid_size; i++) {
+        for (unsigned j=0; j<grid_size; j++) {
+            if (values[i][j] == 0) {
+                available_moves.emplace_back(Vector2D{i, j});
+            }
+        }
+    }
+    return available_moves;
 }
