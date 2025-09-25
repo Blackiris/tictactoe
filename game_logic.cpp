@@ -17,8 +17,8 @@ void display_winner(const int &winner) {
 }
 
 int GameLogic::start() {
-    const unsigned grid_size = 4;
-    const unsigned cpu_max_depth = 5;
+    const unsigned grid_size = 3;
+    const unsigned cpu_max_depth = 10;
     backend.init(300, 300);
     bool is_player_turn = true;
     GameState current_game_state(grid_size);

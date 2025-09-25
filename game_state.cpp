@@ -20,10 +20,10 @@ int GameState::get_winner() const {
 
     if (!has_win) {
         // Check lines
-        for (int line=0; line<grid_size; line++) {
+        for (unsigned line=0; line<grid_size; line++) {
             int first = values[0][line];
             has_win = true;
-            for (int col=1; col<grid_size; col++) {
+            for (unsigned col=1; col<grid_size; col++) {
                 if (values[col][line] != first) {
                     has_win = false;
                     break;
@@ -41,7 +41,7 @@ int GameState::get_winner() const {
         // Check diagonals
         int first = values[0][0];
         has_win = true;
-        for (int i=1; i<grid_size; i++) {
+        for (unsigned i=1; i<grid_size; i++) {
             if (values[i][i] != first) {
                 has_win = false;
                 break;
@@ -52,7 +52,7 @@ int GameState::get_winner() const {
         } else {
             has_win = true;
             first = values[0][grid_size-1];
-            for (int i=1; i<grid_size; i++) {
+            for (unsigned i=1; i<grid_size; i++) {
                 if (values[i][grid_size-i-1] != first) {
                     has_win = false;
                     break;
@@ -74,7 +74,7 @@ std::vector<Vector2D> GameState::get_available_moves() const {
     for (unsigned i=0; i<grid_size; i++) {
         for (unsigned j=0; j<grid_size; j++) {
             if (values[i][j] == 0) {
-                available_moves.emplace_back(Vector2D{i, j});
+                available_moves.emplace_back(Vector2D{(int)i, (int)j});
             }
         }
     }
