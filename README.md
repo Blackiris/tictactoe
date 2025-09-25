@@ -1,5 +1,7 @@
 # TicTacToe
+Play TicTacToe against CPU. CPU AI is powered by the Minimax algorithm.
 
+![TicTacToe screenshot](/tictactoe_screenshot.png?raw=true "TicTacToe")
 
 # How to build
 On root,
