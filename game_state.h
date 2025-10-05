@@ -1,5 +1,4 @@
-#ifndef GAME_STATE_H
-#define GAME_STATE_H
+#pragma once
 
 #include "utils/vector2d.h"
 #include <vector>
@@ -14,5 +13,3 @@ public:
     int get_winner() const;
     std::vector<Vector2D> get_available_moves() const;
 };
-
-#endif // GAME_STATE_H

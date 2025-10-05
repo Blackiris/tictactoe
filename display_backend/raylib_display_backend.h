@@ -1,5 +1,4 @@
-#ifndef RAYLIB_DISPLAY_BACKEND_H
-#define RAYLIB_DISPLAY_BACKEND_H
+#pragma once
 
 #include "backend.h"
 
@@ -28,5 +27,3 @@ private:
 
     int get_h_space() const;
 };
-
-#endif // RAYLIB_DISPLAY_BACKEND_H

@@ -1,5 +1,4 @@
-#ifndef GAME_LOGIC_H
-#define GAME_LOGIC_H
+#pragma once
 
 #include "display_backend/backend.h"
 
@@ -15,5 +14,3 @@ private:
 
     Backend &backend;
 };
-
-#endif // GAME_LOGIC_H

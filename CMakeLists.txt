@@ -7,6 +7,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(raylib 5.5 REQUIRED)
 
+add_compile_options(-Wall -Wextra -Wpedantic -Werror)
+
+option(ENABLE_ASAN "Enable the AddressSanitizer" OFF)
+
+if(ENABLE_ASAN)
+    add_compile_options(-fsanitize=address)
+    add_link_options(-fsanitize=address)
+endif()
+
 add_executable(TicTacToe main.cpp
     game_logic.h game_logic.cpp
     display_backend/raylib_display_backend.h display_backend/raylib_display_backend.cpp

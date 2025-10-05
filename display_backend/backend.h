@@ -1,5 +1,4 @@
-#ifndef BACKEND_H
-#define BACKEND_H
+#pragma once
 
 #include "../utils/vector2d.h"
 #include "../game_state.h"
@@ -19,5 +18,3 @@ public:
     virtual Vector2D get_mouse_pos(const int &grid_size) const = 0;
     virtual bool is_mouse_button_pressed(const MouseButtonName &button_name) const = 0;
 };
-
-#endif // BACKEND_H

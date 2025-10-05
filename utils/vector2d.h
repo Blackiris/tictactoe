@@ -1,5 +1,4 @@
-#ifndef VECTOR2D_H
-#define VECTOR2D_H
+#pragma once
 
 class Vector2D
 {
@@ -29,4 +28,3 @@ public:
     Vector2D& operator-=(const Vector2D& vec2d);
 };
 
-#endif // VECTOR2D_H

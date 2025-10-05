@@ -1,5 +1,4 @@
-#ifndef MINIMAX_H
-#define MINIMAX_H
+#pragma once
 
 #include "../game_state.h"
 #include "vector2d.h"
@@ -18,6 +17,3 @@ Vector2D find_best_move(const GameState &game_state, const int &player, const un
 MinimaxTree generate_minimax_tree(const GameState &game_state, const int &player, const Vector2D &previous_move, const unsigned &max_depth);
 int minmax(const MinimaxTree &minimax_tree, int maximize_player, bool maximize);
 }
-
-
-#endif // MINIMAX_H
